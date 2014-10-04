@@ -1,30 +1,31 @@
-module.exports = function(grunt) {
-    var path = require('path');
-    require('time-grunt')(grunt);
-    require('load-grunt-config')(grunt, {
-        configPath: path.join(process.cwd(), 'grunt'), //path to task.js files, defaults to grunt dir
-        init: true, //auto grunt.initConfig
-        data: { //data passed into config.  Can use with <%= test %>
-            nodeInspector: {
-                webPort: 8081,
-                debugPort: 5858
-            },
-            cwd: process.cwd()
-        },
-        jitGrunt: {
-            instrument: 'grunt-istanbul',
-            storeCoverage: 'grunt-istanbul',
-            makeReport: 'grunt-istanbul',
-            'validate-package': 'grunt-nsp-package'
-        }
-    });
+var Help =  {
+  auditpkg: 'Verifies modules that contains security issues',
+  serve: 'Serves API service',
+  spec: 'Runs Jasmine 2.0 specs',
+  coverage: 'Runs Istanbul code coverage. Outputs HTML reports to test/coverage/reports'
+};
+
+var tasks = function(grunt) {
 
     // Default task.
-    grunt.registerTask('serve', ['concurrent']);
-    grunt.registerTask('spec', ['jshint', 'jasmine_node:dev']);
-    grunt.registerTask('coverage', ['jshint', 'clean:coverage', 'env:coverage',
+    grunt.registerTask('serve', Help.serve, ['concurrent']);
+    grunt.registerTask('spec', Help.spec, ['jshint', 'jasmine_node:dev']);
+    grunt.registerTask('coverage', Help.coverage, ['jshint', 'clean:coverage', 'env:coverage',
         'instrument', 'jasmine_node:coverage', 'storeCoverage', 'makeReport']);
     
     // verifies security
-    grunt.registerTask('auditpkg', ['validate-package']);
+    grunt.registerTask('auditpkg', Help.auditpkg, ['validate-package']);
+
 };
+
+function Loader(grunt) {
+    return {
+        help: Help,
+        registerTasks: function() {
+            return tasks(grunt);
+        }
+    };
+}
+
+
+module.exports = Loader;
