@@ -2,8 +2,10 @@ var Help =  {
   auditpkg: 'Verifies modules that contains security issues',
   serve: 'Serves API service',
   spec: 'Runs Jasmine 2.0 specs',
-  coverage: 'Runs Istanbul code coverage. Outputs HTML reports to test/coverage/reports'
+  coverage: 'Runs Istanbul code coverage. Outputs HTML reports to test/coverage/reports',
+  docs: 'Generates documentation'
 };
+
 
 var tasks = function(grunt) {
 
@@ -14,8 +16,12 @@ var tasks = function(grunt) {
         'instrument', 'jasmine_node:coverage', 'storeCoverage', 'makeReport']);
     
     // verifies security
-    grunt.registerTask('auditpkg', Help.auditpkg, ['validate-package']);
+    grunt.registerTask('auditpkg', Help.auditpkg,
+      ['validate-package']);
 
+    // generates jsdoc3
+    grunt.registerTask('docs', Help.docs,
+      ['jsdoc']);
 };
 
 function Loader(grunt) {
