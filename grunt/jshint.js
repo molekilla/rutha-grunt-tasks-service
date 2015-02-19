@@ -9,7 +9,7 @@
       options: {
         reporter: require('jshint-stylish'),
         devel: true,
-        curly: true,
+        curly: false,
         strict: false,
         eqeqeq: true,
         immed: true,
@@ -17,7 +17,9 @@
         newcap: true,
         noarg: true,
         sub: true,
+        node: true,
         undef: true,
+        esnext: true,
         unused: false,
         boss: true,
         eqnull: true,
