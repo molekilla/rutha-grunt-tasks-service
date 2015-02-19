@@ -1,6 +1,6 @@
 {
   "name": "rutha-grunt-tasks-service",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Rutha Grunt Tasks",
   "author": "Rogelio Morrell",
   "repository": {
@@ -12,7 +12,7 @@
 
   },
   "dependencies": {
-    "jshint-stylish": "^0.4.0"
+    "jshint-stylish": "^1.0.0"
   },
   "bugs": {
     "url": "https://github.com/molekilla/rutha-grunt-tasks-service/issues"
