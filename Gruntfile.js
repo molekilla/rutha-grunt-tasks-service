@@ -1,14 +1,17 @@
 var Help =  {
   auditpkg: 'Verifies modules that contains security issues',
   serve: 'Serves API service',
-  spec: 'Runs Jasmine 2.0 specs',
+  spec: 'Runs Jasmine specs',
   coverage: 'Runs Istanbul code coverage. Outputs HTML reports to test/coverage/reports',
-  docs: 'Generates documentation'
+  docs: 'Generates documentation',
+  postinstall: 'Postinstall grunt shell script'
 };
 
 
 var tasks = function(grunt) {
 
+    grunt.registerTask('postinstall', Help.postinstall, 'shell:postinstall');
+  
     // Default task.
     grunt.registerTask('serve', Help.serve, ['babel:es6', 'jshint', 'concurrent']);
     grunt.registerTask('spec', Help.spec, ['jshint', 'shell:jasmine']);

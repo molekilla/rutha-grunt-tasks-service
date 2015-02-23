@@ -5,6 +5,11 @@ Grunt tasks used by rutha service
 
 ### Changelog
 
+
+#### 0.2.4
+
+* Adding postinstall task
+
 #### 0.2.3
 
 * (Using `jasmine` dependency)[http://jasmine.github.io/2.2/node.html]
