@@ -11,7 +11,7 @@ var tasks = function(grunt) {
 
     // Default task.
     grunt.registerTask('serve', Help.serve, ['babel:es6', 'jshint', 'concurrent']);
-    grunt.registerTask('spec', Help.spec, ['jshint', 'jasmine_node:dev']);
+    grunt.registerTask('spec', Help.spec, ['jshint', 'shell:jasmine']);
     grunt.registerTask('coverage', Help.coverage, ['jshint', 'clean:coverage', 'env:coverage',
         'instrument', 'jasmine_node:coverage', 'storeCoverage', 'makeReport']);
     
