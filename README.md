@@ -5,6 +5,9 @@ Grunt tasks used by rutha service
 
 ### Changelog
 
+#### 0.2.5
+
+* Added nodeInspector.saveLiveEdit for grunt-node-inspector 0.1.6
 
 #### 0.2.4
 
