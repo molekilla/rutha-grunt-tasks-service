@@ -5,6 +5,10 @@ Grunt tasks used by rutha service
 
 ### Changelog
 
+#### 0.3.0
+
+* ES6 ready, use either babel or typescript
+
 #### 0.2.5
 
 * Added nodeInspector.saveLiveEdit for grunt-node-inspector 0.1.6

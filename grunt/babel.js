@@ -9,6 +9,7 @@ module.exports = {
           dest: "<%= cwd %>",
           ext: ".js"
         }
-    ]
+    ],
+    options: '<%= es6.options %>'
   }
 };
