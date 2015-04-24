@@ -6,6 +6,10 @@ Grunt tasks used by rutha service
 ### Changelog
 
 
+#### 0.3.2
+
+* enabled ES6 /  Typescript in `grunt spec`
+
 #### 0.3.1
 
 * Included models, migrations and spec for ES6 / Typescript transpilers

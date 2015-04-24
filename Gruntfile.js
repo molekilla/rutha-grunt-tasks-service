@@ -14,9 +14,11 @@ var tasks = function (grunt, options) {
 
     if (options.es6 && options.es6.transpiler === 'ts') {
         // Default task.
+        grunt.registerTask('spec', Help.spec, ['ts', 'jshint', 'shell:jasmine']);
         grunt.registerTask('serve', Help.serve, ['ts', 'jshint', 'concurrent']);
     } else if (options.es6 && options.es6.transpiler === 'babel') {
         // Default task.
+        grunt.registerTask('spec', Help.spec, ['babel:es6', 'jshint', 'shell:jasmine']);
         grunt.registerTask('serve', Help.serve, ['babel:es6', 'jshint', 'concurrent']);
 //    } else if (options.es6 && options.es6.transpiler === 'both') {
 //        // Default task.
@@ -24,9 +26,10 @@ var tasks = function (grunt, options) {
     } else {
         // Default task.
         grunt.registerTask('serve', Help.serve, ['jshint', 'concurrent']);
+        grunt.registerTask('spec', Help.spec, ['jshint', 'shell:jasmine']);
+
     }
 
-    grunt.registerTask('spec', Help.spec, ['jshint', 'shell:jasmine']);
     grunt.registerTask('coverage', Help.coverage, ['jshint', 'clean:coverage', 'env:coverage',
         'instrument', 'jasmine_node:coverage', 'storeCoverage', 'makeReport']);
 
