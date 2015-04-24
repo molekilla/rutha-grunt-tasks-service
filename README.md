@@ -5,6 +5,12 @@ Grunt tasks used by rutha service
 
 ### Changelog
 
+
+#### 0.3.1
+
+* Included models, migrations and spec for ES6 / Typescript transpilers
+* Included shared and service/models for JSDoc
+
 #### 0.3.0
 
 * ES6 ready, use either babel or typescript

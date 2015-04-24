@@ -1,11 +1,11 @@
        
 module.exports = {
-  es6: {
+  ts: {
     files: [
         {
           expand: true,
           cwd: "<%= cwd %>",
-          src: ["lib/**/*.es6", "models/**/*.es6", "spec/**/*.es6", "migrations/**/*.es6"],
+          src: ["lib/**/*.ts", "models/**/*.ts", "spec/**/*.ts", "migrations/**/*.ts"],
           dest: "<%= cwd %>",
           ext: ".js"
         }
