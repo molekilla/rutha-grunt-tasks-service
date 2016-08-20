@@ -1,6 +1,6 @@
 {
   "name": "rutha-grunt-tasks-service",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Rutha Grunt Tasks",
   "author": "Rogelio Morrell",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "grunt-nsp-package": "0.0.5"
+    "grunt-nsp": "2.3.1"
   },
   "dependencies": {
     "jshint-stylish": "^1.0.0"

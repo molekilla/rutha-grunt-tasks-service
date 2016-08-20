@@ -3,7 +3,7 @@ module.exports = function (grunt, options) {
 
   var scripts = {
     jasmine: {
-      command: "jasmine"
+      command: "node ./node_modules/jasmine/bin/jasmine.js"
     },
     postinstall: {
       command: "npm install jasmine -g"
